@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: martingalloar
+  description: An ansible role for running Tentacool HPFeeds broker
+  license: GPLv2
+  min_ansible_version: 1.4
+  platforms:
+  - name: Ubuntu
+    versions:
+    - trusty
+  categories:
+    - monitoring
+
+dependencies: []

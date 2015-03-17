@@ -1,0 +1,62 @@
+---
+
+- name: Update apt package cache
+  apt: update_cache=yes
+
+- name: Upgrade to the latest packages
+  apt: upgrade=safe
+
+- name: Install required system packages
+  apt: >
+    name="{{ item }}"
+    update_cache=yes
+    state=latest
+  with_items: tentacool_system_packages
+
+- name: Create user for running tentacool
+  user: >
+    name="{{ tentacool_username }}"
+    home="/home/{{ tentacool_username }}"
+
+- name: Create tentacool folder
+  file: dest="{{ tentacool_dir }}" state=directory owner="{{ tentacool_username }}" mode=755
+
+- name: Checkout tentacool source
+  git: >
+    repo=https://github.com/tentacool/tentacool
+    dest="{{ tentacool_dir }}"
+
+- name: Generate tentacool build configure
+  shell: autoreconf -i
+  args:
+    chdir: "{{ tentacool_dir }}"
+
+- name: Configures tentacool build
+  shell: ./configure
+  args:
+    chdir: "{{ tentacool_dir }}"
+
+- name: Build tentacool
+  shell: make
+  args:
+    chdir: "{{ tentacool_dir }}"
+    
+- name: Install tentacool
+  shell: make install
+  args:
+    chdir: "{{ tentacool_dir }}"
+
+- name: Copy init.d script for tentacool
+  template: src=tentacool.sh dest="/etc/init.d/{{ tentacool_service }}" owner=root mode=755
+  notify: Restart supervisord
+
+- name: Create init.d config for tentacool
+  template: src=tentacool.ini dest="/etc/defaults/{{ tentacool_service }}" owner=root mode=755
+  notify: Restart supervisord
+
+- name: Write tentacool auth file
+  template: src=auth_keys.dat dest="{{ tentacool_auth_file }}"
+
+- name: Add tentacool service
+  service: name="{{ tentacool_service }}" enabled=yes state=started
+  

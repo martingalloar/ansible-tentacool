@@ -1,0 +1,4 @@
+---
+
+- name: restart tentacool
+  service: name="{{ tentacool_service }}" state=restarted

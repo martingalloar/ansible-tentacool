@@ -1,0 +1,3 @@
+{% for user in tentacool_auth %}
+{{ user.identifier }};{{ user.secret }};{{ user.publish }};{{ user.subscribe }}
+{% endfor %}

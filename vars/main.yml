@@ -1,0 +1,18 @@
+---
+
+tentacool_system_packages:
+  - git
+  - autoconf
+  - python-pip
+  - libpoco-dev
+  - libcppunit-dev
+  - build-essential
+
+# Name of the service 
+tentacool_service: tentacool
+
+# Path to install tentacool
+tentacool_dir: /opt/tentacool
+
+# Destination path of the authorization file for Tentacool
+tentacool_auth_file: /etc/tentacool_auth_keys.dat
