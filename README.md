@@ -1,6 +1,8 @@
 Ansible Role: Tentacool
 =======================
 
+[![Build Status](https://travis-ci.org/martingalloar/ansible-tentacool.svg?branch=master)](https://travis-ci.org/martingalloar/ansible-tentacool)
+
 An Ansible role that installs [Tentacool](https://github.com/tentacool/tentacool) on Debian/Ubuntu.
 
 Requirements
