@@ -24,26 +24,31 @@
   git: >
     repo=https://github.com/tentacool/tentacool
     dest="{{ tentacool_dir }}"
+  register: checkout
 
 - name: Generate tentacool build configure
   shell: autoreconf -i
   args:
     chdir: "{{ tentacool_dir }}"
+  when: checkout.changed
 
 - name: Configures tentacool build
   shell: ./configure
   args:
     chdir: "{{ tentacool_dir }}"
+  when: checkout.changed
 
 - name: Build tentacool
   shell: make
   args:
     chdir: "{{ tentacool_dir }}"
+  when: checkout.changed
     
 - name: Install tentacool
   shell: make install
   args:
     chdir: "{{ tentacool_dir }}"
+  when: checkout.changed
 
 - name: Copy init.d script for tentacool
   template: >
