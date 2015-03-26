@@ -3,9 +3,6 @@
 - name: Update apt package cache
   apt: update_cache=yes
 
-- name: Upgrade to the latest packages
-  apt: upgrade=safe
-
 - name: Install required system packages
   apt: >
     name="{{ item }}"
