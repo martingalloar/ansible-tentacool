@@ -3,7 +3,7 @@ Ansible Role: Tentacool
 
 [![Build Status](https://travis-ci.org/martingalloar/ansible-tentacool.svg?branch=master)](https://travis-ci.org/martingalloar/ansible-tentacool)
 
-An Ansible role that installs [Tentacool](https://github.com/tentacool/tentacool) on Debian/Ubuntu.
+An Ansible role that installs [Tentacool](https://github.com/tentacool/tentacool) HPFeeds broker on Debian/Ubuntu.
 
 Requirements
 ------------
@@ -78,7 +78,7 @@ TODO
 ----
 
 - [ ] Configurable logfile
-- [ ] Option to setup MongoDB as authentication store (maybe as a separate role, to don't add another dependency)
+- [ ] Option to setup MongoDB as authentication store (maybe as a separate role, to avoid adding another dependency)
 
 
 Author Information
