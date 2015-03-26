@@ -16,7 +16,7 @@ tentacool_queuelen: 64
 tentacool_idletime: 100
 
 # If the debug is enabled
-#tentacool_debug: false
+tentacool_debug: false
 
 # Name of the file to log
-#tentacool_logfile: tentacool.log
+tentacool_logfile: tentacool.log

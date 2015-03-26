@@ -16,7 +16,7 @@ PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="Tentacool hpfeeds broker"
 NAME={{ tentacool_service }}
 DAEMON=/usr/local/bin/tentacool
-DAEMON_ARGS="--options args"
+DAEMON_ARGS=""
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
 

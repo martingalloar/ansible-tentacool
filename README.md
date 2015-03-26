@@ -1,5 +1,5 @@
 Ansible Role: Tentacool
-=========
+=======================
 
 An Ansible role that installs [Tentacool](https://github.com/tentacool/tentacool) on Debian/Ubuntu.
 
@@ -50,9 +50,9 @@ None.
 Example Playbook
 ----------------
 
-The following example playbook installs Tentacool with the name honeypot,
-and registers the identity "honeypot" to publish and subscribe to the
-"honeypot.events" hpfeed channel:
+The following example playbook installs Tentacool with the name `honeypot`,
+and registers the identity `honeypot` to publish and subscribe to the
+`honeypot.events` hpfeed channel:
 
     - hosts: servers
       roles:
