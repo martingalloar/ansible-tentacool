@@ -71,6 +71,14 @@ License
 
 GPL2+
 
+
+TODO
+----
+
+[ ] Configurable logfile
+[ ] Option to setup MongoDB as authentication store (maybe as a separate role, to don't add another dependency)
+
+
 Author Information
 ------------------
 

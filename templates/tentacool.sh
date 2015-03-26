@@ -15,10 +15,11 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="Tentacool hpfeeds broker"
 NAME={{ tentacool_service }}
-DAEMON=/usr/local/bin/tentacool
+DAEMON={{ tentacool_dir }}/tentacool
 DAEMON_ARGS=""
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
+CHUID={{ tentacool_username }}
 
 # Exit if the package is not installed
 [ -x "$DAEMON" ] || exit 0
@@ -43,9 +44,9 @@ do_start()
     #   0 if daemon has been started
     #   1 if daemon was already running
     #   2 if daemon could not be started
-    start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON --test > /dev/null \
+    start-stop-daemon --start --quiet --chuid $CHUID --pidfile $PIDFILE --exec $DAEMON --test > /dev/null \
         || return 1
-    start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON -- \
+    start-stop-daemon --start --quiet --chuid $CHUID --pidfile $PIDFILE --exec $DAEMON -- \
         $DAEMON_ARGS \
         || return 2
 }

@@ -19,7 +19,9 @@
     home="/home/{{ tentacool_username }}"
 
 - name: Create tentacool folder
-  file: dest="{{ tentacool_dir }}" state=directory owner="{{ tentacool_username }}" mode=755
+  file: >
+    dest="{{ tentacool_dir }}"
+    state=directory owner="{{ tentacool_username }}" mode=755
 
 - name: Checkout tentacool source
   git: >
@@ -47,15 +49,19 @@
     chdir: "{{ tentacool_dir }}"
 
 - name: Copy init.d script for tentacool
-  template: src=tentacool.sh dest="/etc/init.d/{{ tentacool_service }}" owner=root mode=755
-  notify: Restart supervisord
+  template: >
+    src=tentacool.sh
+    dest="/etc/init.d/{{ tentacool_service }}" owner=root mode=755
 
 - name: Create init.d config for tentacool
-  template: src=tentacool.ini dest="/etc/defaults/{{ tentacool_service }}" owner=root mode=755
-  notify: Restart supervisord
+  template: >
+    src=tentacool
+    dest="/etc/default/{{ tentacool_service }}" owner=root mode=755
 
 - name: Write tentacool auth file
-  template: src=auth_keys.dat dest="{{ tentacool_auth_file }}"
+  template: >
+    src=auth_keys.dat
+    dest="{{ tentacool_auth_file }}" owner=root mode=755
 
 - name: Add tentacool service
   service: name="{{ tentacool_service }}" enabled=yes state=started

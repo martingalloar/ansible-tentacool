@@ -6,6 +6,6 @@ BROKER_MAX_THREADS="{{ tentacool_max_thread }}"
 BROKER_QUEUELEN="{{ tentacool_queuelen }}"
 BROKER_IDLETIME="{{ tentacool_idletime }}"
 BROKER_AUTH_FILE="{{ tentacool_auth_file }}"
-BROKER_DEBUG="{% if tentacool_debug %}--debug{% endif %} {% if tentacool_logfile %}--log_stdout 1>>{{ tentacool_logfile }} 2>>{{ tentacool_logfile }}{% endif %}"
+BROKER_DEBUG="{% if tentacool_debug %}--debug{% endif %}"
 
-DAEMON_ARGS="--name=$BROKER_NAME --port=$BROKER_PORT --max_thread=$BROKER_MAX_THREADS --queuelen=$BROKER_QUEUELEN --idletime=$BROKER_IDLETIME --file=$BROKER_AUTH_FILE $BROKER_DEBUG"
+DAEMON_ARGS="--daemon --name=$BROKER_NAME --port=$BROKER_PORT --max_thread=$BROKER_MAX_THREADS --queuelen=$BROKER_QUEUELEN --idletime=$BROKER_IDLETIME --file=$BROKER_AUTH_FILE $BROKER_DEBUG"

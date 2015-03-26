@@ -11,6 +11,9 @@ tentacool_system_packages:
 # Name of the service 
 tentacool_service: tentacool
 
+# User to run the service
+tentacool_username: tentacool
+
 # Path to install tentacool
 tentacool_dir: /opt/tentacool
 

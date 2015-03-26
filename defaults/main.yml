@@ -1,7 +1,7 @@
 ---
 
 # The name of the broker
-tentacool_broker_name: '@hp1'
+tentacool_broker_name: "@hp1"
 
 # Port for running the broker
 tentacool_port: 20000
@@ -17,9 +17,6 @@ tentacool_idletime: 100
 
 # If the debug is enabled
 tentacool_debug: false
-
-# Name of the file to log
-tentacool_logfile: tentacool.log
 
 # Authorization data
 tentacool_auth: []
