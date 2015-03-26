@@ -20,3 +20,6 @@ tentacool_debug: false
 
 # Name of the file to log
 tentacool_logfile: tentacool.log
+
+# Authorization data
+tentacool_auth: []
