@@ -1,7 +1,7 @@
 Ansible Role: Tentacool
 =======================
 
-[![Build Status](https://travis-ci.org/martingalloar/ansible-tentacool.svg?branch=master)](https://travis-ci.org/martingalloar/ansible-tentacool)
+[![Build Status](https://travis-ci.org/martingalloar/ansible-tentacool.svg?branch=master)](https://travis-ci.org/martingalloar/ansible-tentacool) [![Ansible Galaxy](http://img.shields.io/badge/galaxy-martingalloar.tentacool-660198.svg)](https://galaxy.ansible.com/list#/roles/3236)
 
 An Ansible role that installs [Tentacool](https://github.com/tentacool/tentacool) HPFeeds broker on Debian/Ubuntu.
 
@@ -85,3 +85,4 @@ Author Information
 ------------------
 
 This role was created by Martin Gallo.
+
