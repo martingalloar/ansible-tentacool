@@ -1,4 +1,6 @@
 ---
 
 - name: restart tentacool
-  service: name="{{ tentacool_service }}" state=restarted
+  service:
+    name: "{{ tentacool_service }}"
+    state: restarted
