@@ -58,21 +58,23 @@
     src: "tentacool.sh"
     dest: "/etc/init.d/{{ tentacool_service }}"
     owner: root
-    mode: 755
+    mode: 0755
 
 - name: Create init.d config for tentacool
   template:
     src: tentacool
     dest: "/etc/default/{{ tentacool_service }}"
     owner: root
-    mode: 755
+    group: root
+    mode: 0755
 
 - name: Write tentacool auth file
   template:
     src: auth_keys.dat
     dest: "{{ tentacool_auth_file }}"
     owner: root
-    mode: 755
+    group: root
+    mode: 0644
 
 - name: Add tentacool service
   service:
