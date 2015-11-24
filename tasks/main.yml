@@ -25,7 +25,7 @@
 
 - name: Checkout tentacool source
   git:
-    repo: "https://github.com/tentacool/tentacool"
+    repo: "{{ tentacool_repository }}"
     dest: "{{ tentacool_dir }}"
   register: checkout
 

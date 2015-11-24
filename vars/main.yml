@@ -11,6 +11,9 @@ tentacool_system_packages:
 # Name of the service 
 tentacool_service: tentacool
 
+# Tentacool repository
+tentacool_repository: "https://github.com/tentacool/tentacool"
+
 # User to run the service
 tentacool_username: tentacool
 
